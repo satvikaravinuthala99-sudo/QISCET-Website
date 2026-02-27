@@ -1,0 +1,422 @@
+/* =====================
+   GENERAL RESET & BODY
+===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(135deg, #0a0f1f, #140a2a, #1a103a);
+  color: white;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* =====================
+   NAVIGATION BAR
+===================== */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 8%;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.logo img {
+  width: 40px;
+}
+
+nav ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  position: relative;
+  transition: 0.3s;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg,#7b2ff7,#00c6ff);
+  transition: 0.4s;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* =====================
+   HERO SECTION
+===================== */
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), 
+              url('images/campus1.jpg') center/cover fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.glow-title {
+  font-size: 52px;
+  font-weight: 800;
+  background: linear-gradient(90deg, #7b2ff7, #00c6ff, #a18cd1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glowMove 6s linear infinite;
+}
+
+@keyframes glowMove {
+  0% { background-position: 0%; }
+  100% { background-position: 200%; }
+}
+
+.typewriter {
+  margin-top: 20px;
+  font-size: 22px;
+  color: #00c6ff;
+  text-align: center;
+  display: inline-block;
+}
+
+/* =====================
+   SECTIONS
+===================== */
+.section {
+  padding: 120px 8%;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 38px;
+  margin-bottom: 60px;
+  background: linear-gradient(90deg,#7b2ff7,#00c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* =====================
+   GLASS CARDS
+===================== */
+.glass-card {
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 30px;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: 0.4s;
+}
+
+.glass-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 40px rgba(123,47,247,0.6);
+}
+
+/* =====================
+   ABOUT GRID
+===================== */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.profile-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #7b2ff7;
+}
+
+/* =====================
+   GALLERY
+===================== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: 0.5s;
+}
+
+.gallery-item span {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.6);
+  text-align: center;
+  padding: 10px;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-item:hover span {
+  opacity: 1;
+}
+
+/* =====================
+   CAMPUS TOUR BOX
+===================== */
+.campus-tour {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.tour-box {
+  display: inline-block;
+  padding: 20px 40px;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(15px);
+  color: #00c6ff;
+  font-weight: bold;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: 0.4s;
+}
+
+.tour-box:hover {
+  background: rgba(123,47,247,0.3);
+  box-shadow: 0 0 25px rgba(123,47,247,0.6);
+  transform: scale(1.05);
+}
+
+/* =====================
+   FACILITIES
+===================== */
+.facilities-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.facilities-left li,
+.facilities-right li {
+  background: rgba(255,255,255,0.06);
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  text-align: center;
+  transition: 0.4s;
+}
+
+.facilities-left li:hover,
+.facilities-right li:hover {
+  background: rgba(123,47,247,0.3);
+  box-shadow: 0 0 20px rgba(123,47,247,0.6);
+  transform: scale(1.05);
+}
+
+/* =====================
+   ACADEMICS
+===================== */
+.branch-list {
+  margin-top: 20px;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.branch-list li {
+  background: rgba(255,255,255,0.06);
+  padding: 12px;
+  border-radius: 8px;
+}
+
+/* =====================
+   PLACEMENTS
+===================== */
+.placement-highlight {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.placement-highlight .card {
+  background: rgba(255,255,255,0.06);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.placement-highlight .card:hover {
+  background: rgba(123,47,247,0.3);
+  box-shadow: 0 0 25px rgba(123,47,247,0.6);
+  transform: scale(1.05);
+}
+
+.recruiters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.recruiters li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.06);
+  padding: 15px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.recruiters li:hover {
+  background: rgba(123,47,247,0.3);
+  box-shadow: 0 0 25px rgba(123,47,247,0.6);
+  transform: scale(1.05);
+}
+
+.recruiters li img {
+  width: 60px;
+  margin-bottom: 10px;
+  object-fit: contain;
+}
+
+/* =====================
+   CONTACT
+===================== */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+iframe {
+  width: 100%;
+  height: 300px;
+  border-radius: 20px;
+  border: none;
+}
+.contact-info {
+    background: rgba(255,255,255,0.06);  /* Glass effect */
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;              /* Flex layout */
+    flex-direction: column;     /* Stack items vertically */
+    justify-content: center;    /* Vertical center */
+    align-items: flex-start;    /* Align text to the left */
+    text-align: left;           /* Left-align text */
+    gap: 10px;                  /* Space between lines */
+}
+
+/* =====================
+   FOOTER
+===================== */
+footer {
+  text-align: center;
+  padding: 25px;
+  background: rgba(0,0,0,0.6);
+  margin-top: 50px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* =====================
+   REVEAL ANIMATION
+===================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: 1s;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =====================
+   PARTICLES LAYER
+===================== */
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.hero .hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media(max-width: 900px){
+  .about-grid,
+  .contact-grid,
+  .facilities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .glow-title {
+    font-size: 36px;
+  }
+}
