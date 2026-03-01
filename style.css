@@ -194,12 +194,18 @@ nav ul li a:hover::after {
 .gallery-item span {
   position: absolute;
   bottom: 0;
+  left: 0;
   width: 100%;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.7);
+  color: white;
   text-align: center;
-  padding: 10px;
+  padding: 12px;
   opacity: 0;
-  transition: 0.5s;
+  transition: opacity 0.4s ease;
+  z-index: 10;   /* Important */
+}
+.gallery-item:hover span {
+  opacity: 1;
 }
 
 .gallery-item:hover img {
@@ -208,6 +214,11 @@ nav ul li a:hover::after {
 
 .gallery-item:hover span {
   opacity: 1;
+}
+@media (max-width: 768px) {
+  .gallery-item span {
+    opacity: 1;
+  }
 }
 
 /* =====================
